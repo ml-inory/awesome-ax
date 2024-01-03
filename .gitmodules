@@ -1,3 +1,6 @@
 [submodule "thirdparty/jsoncpp"]
 	path = thirdparty/jsoncpp
 	url = https://github.com/open-source-parsers/jsoncpp.git
+[submodule "thirdparty/RTSP"]
+	path = thirdparty/RTSP
+	url = https://github.com/ZHEQIUSHUI/RTSP.git
