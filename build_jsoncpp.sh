@@ -10,7 +10,7 @@ fi
 
 # jsoncpp
 cd ${thirdparty}
-mkdir jsoncpp-build
+mkdir -p jsoncpp-build
 cd jsoncpp-build
 cmake .. -DCMAKE_INSTALL_PREFIX=${install_path} -DCMAKE_TOOLCHAIN_FILE=${pwd}/toolchains/ax620e.cmake -DJSONCPP_WITH_TESTS=OFF -DJSONCPP_WITH_POST_BUILD_UNITTEST=OFF -DJSONCPP_WITH_EXAMPLE=OFF
 make -j8

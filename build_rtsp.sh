@@ -10,7 +10,7 @@ fi
 
 # RTSP
 cd ${thirdparty}
-mkdir RTSP-build
+mkdir -p RTSP-build
 cd RTSP-build
 cmake .. -DCMAKE_INSTALL_PREFIX=${install_path} -DCMAKE_TOOLCHAIN_FILE=${pwd}/toolchains/ax620e.cmake
 make -j8
