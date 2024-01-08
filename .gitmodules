@@ -7,3 +7,6 @@
 [submodule "thirdparty/RtspServer/RtspServer"]
 	path = thirdparty/RtspServer/RtspServer
 	url = https://github.com/ZHEQIUSHUI/RtspServer.git
+[submodule "thirdparty/mosquitto"]
+	path = thirdparty/mosquitto
+	url = https://github.com/eclipse/mosquitto.git

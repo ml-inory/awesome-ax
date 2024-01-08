@@ -14,8 +14,6 @@
 // 16字节对齐
 #define ALIGN_16(x)     ((x + 15) / 16 * 16)
 
-//FILE* fp_dump = NULL;
-
 AX_S32 FramePoolInit(AX_VDEC_GRP VdGrp, AX_U32 FrameSize, AX_POOL *PoolId, AX_U32 u32FrameBufCnt)
 {
     AX_S32 s32Ret = AX_SUCCESS;
@@ -104,8 +102,6 @@ namespace ax
                 printf("play url: %s falied!\n", m_rtspUrl);
                 return AX_ERR_INIT_FAIL;
             }
-
-//            fp_dump = fopen("test.h264", "wb");
 
             m_hasInit = true;
             return AX_SUCCESS;
@@ -230,8 +226,6 @@ namespace ax
             switch (frame_type)
             {
             case FRAME_TYPE_VIDEO:
-//                printf("Received stream %d\n", len);
-//                fwrite(buf, len, 1, fp_dump);
                 node->SendStream(buf, len);
                 break;
             case FRAME_TYPE_AUDIO:
