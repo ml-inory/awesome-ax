@@ -14,25 +14,29 @@ namespace ax
     {
     public:        
         Node():
-            m_isRunning(false)
+            m_isRunning(false),
+            m_hasInit(false)
         { }
 
-        ~Node() = default;
+        virtual ~Node() = default;
 
         Node(const std::string& name):
             m_name(name),
-            m_isRunning(false)
+            m_isRunning(false),
+            m_hasInit(false)
         { }
 
         const char* name() const { return m_name.c_str(); }
 
-        void SetRunning() { m_isRunning = true; }
+        void Start() { m_isRunning = true; }
 
         virtual int Init(const Json::Value& config) = 0;
 
         virtual int Run() = 0;
 
         virtual void Stop() { m_isRunning = false; }
+
+        inline bool HasInit() const { return m_hasInit; }
 
         int GetInputPortNum() const { return m_inputPorts.size(); }
         int GetOutputPortNum() const { return m_outputPorts.size(); }
@@ -154,5 +158,6 @@ namespace ax
         std::vector<InputPortPtr> m_inputPorts;
         std::vector<OutputPortPtr> m_outputPorts;
         bool m_isRunning;
+        bool m_hasInit;
     };
 } // namespace ppl

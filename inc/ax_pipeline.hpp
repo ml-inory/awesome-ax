@@ -55,7 +55,7 @@ namespace ax
             // Run
             for (auto& node : m_nodes)
             {
-                node->SetRunning();
+                node->Start();
 
                 std::thread t(&Node::Run, node);
                 t.detach();
